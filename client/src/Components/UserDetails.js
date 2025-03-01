@@ -25,7 +25,7 @@ console.log(avatar);
       };
 
       const response = await axios.put(
-        "http://localhost:5000/update-avatar",
+        "https://bookstore-1-yy82.onrender.com/update-avatar",
         formData,
         { headers }
       );
@@ -50,7 +50,7 @@ console.log(avatar);
       };
 
       await axios.put(
-        "http://localhost:5000/update-address",
+        "https://bookstore-1-yy82.onrender.com/update-address",
         { address },
         { headers }
       );

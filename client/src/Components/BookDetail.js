@@ -26,7 +26,7 @@ const BookDetail = () => {
   useEffect(() => {
     const fetchBookDetails = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/get-book/${id}`);
+        const { data } = await axios.get(`https://bookstore-1-yy82.onrender.com/get-book/${id}`);
         setDetails(data.book);
       } catch (error) {
         console.error("Error fetching book details:", error);
@@ -39,7 +39,7 @@ const BookDetail = () => {
 
   const handleFavourites = async () => {
     try {
-      const response = await axios.put('http://localhost:5000/add-book-to-favourites', {}, { headers });
+      const response = await axios.put('https://bookstore-1-yy82.onrender.com/add-book-to-favourites', {}, { headers });
       if (response.status === 200) {
         handleAlert('Book added to favorites', 'success');
       }
@@ -51,7 +51,7 @@ const BookDetail = () => {
 
   const handleCart = async () => {
     try {
-      const response = await axios.put('http://localhost:5000/addToCart', {}, { headers });
+      const response = await axios.put('https://bookstore-1-yy82.onrender.com/addToCart', {}, { headers });
       if (response.status === 200) {
         handleAlert('Book added to cart', 'success');
       }
@@ -63,7 +63,7 @@ const BookDetail = () => {
 
   const handleDelete = async () => {
     try {
-      const response = await axios.delete(`http://localhost:5000/delete-books/${id}`, { headers });
+      const response = await axios.delete(`https://bookstore-1-yy82.onrender.com/delete-books/${id}`, { headers });
       handleAlert(response.data.message || 'Book deleted successfully', 'success');
       navigate("/AllBooks");
     } catch (error) {

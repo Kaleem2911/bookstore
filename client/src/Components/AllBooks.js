@@ -10,7 +10,7 @@ const AllBooks = () => {
   const [booksPerPage] = useState(10);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/get-books").then((res) => {
+    axios.get("https://bookstore-1-yy82.onrender.com/get-books").then((res) => {
       setBooks(res.data.book);
       setFilteredBooks(res.data.book);
     });

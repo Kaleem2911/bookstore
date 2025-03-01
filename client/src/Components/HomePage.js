@@ -14,7 +14,7 @@ const HomePage = () => {
 
   useEffect(() => {
     // Fetch all books
-    axios.get("http://localhost:5000/get-books").then((res) => {
+    axios.get("https://bookstore-1-yy82.onrender.com/get-books").then((res) => {
       setBooks(res.data.book);
     });
 
@@ -24,7 +24,7 @@ const HomePage = () => {
       authorization: `Bearer ${localStorage.getItem("token")}`,
     };
 
-    axios.get("http://localhost:5000/get-favourite-books", { headers })
+    axios.get("https://bookstore-1-yy82.onrender.com/get-favourite-books", { headers })
       .then((res) => {
         setFavouriteBooks(res.data.data);
       })

@@ -13,7 +13,7 @@ function Signup() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post('http://localhost:5000/Singup', {
+      await axios.post('https://bookstore-1-yy82.onrender.com/Singup', {
         username,
         email,
         password,

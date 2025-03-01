@@ -10,7 +10,7 @@ const ForgotPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/forgot-password', { email });
+      const response = await axios.post('https://bookstore-1-yy82.onrender.com/forgot-password', { email });
       setMessage(response.data.message);
       navigate("/reset-password");
     } catch (error) {
