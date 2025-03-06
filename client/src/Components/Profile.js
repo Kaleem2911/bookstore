@@ -25,7 +25,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/get-user-info", { headers })
+      .get("https://bookstore-zqy9.onrender.com/get-user-info", { headers })
       .then((res) => {
         setProfileDetails(res.data.data);
       })

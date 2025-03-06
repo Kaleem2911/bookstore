@@ -12,7 +12,7 @@ const ResetPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/reset-password', { otp, newPassword });
+      const response = await axios.post('https://bookstore-zqy9.onrender.com/reset-password', { otp, newPassword });
       setMessage(response.data.message);
       navigate("/Login");
     } catch (error) {
