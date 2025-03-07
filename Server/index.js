@@ -13,7 +13,7 @@ const order = require('./Routes/order')
 
 const cors = require("cors");
 
-app.use(cors(""));
+app.use(cors());
 
 
 app.use(express.json());
