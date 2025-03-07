@@ -14,7 +14,7 @@ const order = require('./Routes/order')
 const cors = require("cors");
 
 app.use(cors({
-  origin: ["http://localhost:3000", "https://your-vercel-app.vercel.app"], 
+  origin: [ "https://bookstore-zqy9.onrender.com"], 
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization", "id", "bookid"],
