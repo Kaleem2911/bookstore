@@ -13,7 +13,7 @@ function Signup() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post('https://bookstore-zqy9.onrender.com', {
+      await axios.post('https://bookstore-zqy9.onrender.com/Singup', {
         username,
         email,
         password,
