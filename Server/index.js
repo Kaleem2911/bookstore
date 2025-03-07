@@ -13,12 +13,7 @@ const order = require('./Routes/order')
 
 const cors = require("cors");
 
-app.use(cors({
-  origin: [ "https://bookstore-rho-umber.vercel.app/"], 
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
-  allowedHeaders: ["Content-Type", "Authorization", "id", "bookid"],
-}));
+app.use(cors(""));
 
 
 app.use(express.json());
