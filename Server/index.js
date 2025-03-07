@@ -10,10 +10,13 @@ const favourites = require('./Routes/favourites');
 const cart = require('./Routes/cart')
 const order = require('./Routes/order')
 
-
-const cors = require("cors");
-
-app.use(cors());
+app.use(
+  cors({
+    origin: "*", // Allow all origins (Not recommended for production)
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed request methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+  })
+);
 
 
 app.use(express.json());
