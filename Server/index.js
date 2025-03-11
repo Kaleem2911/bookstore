@@ -12,7 +12,7 @@ const order = require('./Routes/order')
 
 app.use(
   cors({
-    origin: "https://bookstore-rho-umber.vercel.app", // Your frontend domain
+    origin: "*", 
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true // Allow credentials
