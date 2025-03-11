@@ -25,7 +25,7 @@ const UpdateBook = () => {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const response = await axios.get(`https://bookstore-zqy9.onrender.com/get-book/${id}`);
+        const response = await axios.get(`https://localhost:5000/get-book/${id}`);
         setBook(response.data.book);
         setFormData({
           title: response.data.book.title,
@@ -68,7 +68,7 @@ const UpdateBook = () => {
 
     try {
       const response = await axios.put(
-        `https://bookstore-zqy9.onrender.com/update-books/${id}`,
+        `https://localhost:5000/update-books/${id}`,
         formDataToSend,
         {
           headers: {

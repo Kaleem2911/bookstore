@@ -15,7 +15,7 @@ const Orders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("https://bookstore-zqy9.onrender.com/get-all-orders", { headers });
+        const response = await axios.get("https://localhost:5000/get-all-orders", { headers });
         setOrders(response.data.data);
         setLoading(false);
       } catch (err) {
@@ -29,7 +29,7 @@ const Orders = () => {
 
   const handleDelete = async (orderId) => {
     try {
-      await axios.delete(`https://bookstore-zqy9.onrender.com/delete-order/${orderId}`, { headers });
+      await axios.delete(`https://localhost:5000/delete-order/${orderId}`, { headers });
       setOrders(orders.filter(order => order._id !== orderId));
     } catch (err) {
       setError("Failed to delete order. Please try again later.");

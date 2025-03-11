@@ -20,7 +20,7 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    axios.get('https://bookstore-zqy9.onrender.com/get-cart-books', { headers })
+    axios.get('https://localhost:5000/get-cart-books', { headers })
       .then((res) => {
         const booksWithQuantity = res.data.data.map(book => ({
           ...book,
@@ -36,7 +36,7 @@ const Cart = () => {
   const handleRemove = async (bookid) => {
     try {
       const response = await axios.delete(
-        'https://bookstore-zqy9.onrender.com/removeBookFromCart',
+        'https://localhost:5000/removeBookFromCart',
         {
           headers: {
             ...headers,
@@ -75,7 +75,7 @@ const Cart = () => {
       }
 
       const response = await axios.post(
-        'https://bookstore-zqy9.onrender.com/place-order',
+        'https://localhost:5000/place-order',
         { order: cartBooks },
         { headers }
       );

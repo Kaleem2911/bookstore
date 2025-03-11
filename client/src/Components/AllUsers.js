@@ -15,7 +15,7 @@ const Users = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("https://bookstore-zqy9.onrender.com/get-all-users", { headers });
+        const response = await axios.get("https://localhost:5000/get-all-users", { headers });
         setUsers(response.data.data);
         setLoading(false);
       } catch (err) {
@@ -31,7 +31,7 @@ const Users = () => {
 
   const handleDelete = async (userId) => {
     try {
-      await axios.delete(`https://bookstore-zqy9.onrender.com/delete-user/${userId}`, { headers });
+      await axios.delete(`https://localhost:5000/delete-user/${userId}`, { headers });
       setUsers(users.filter((user) => user._id !== userId));
     } catch (err) {
       setError("Failed to delete user. Please try again later.");
