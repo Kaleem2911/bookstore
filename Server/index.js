@@ -1,42 +1,22 @@
 const express = require("express");
-const app = express();
 const cors = require("cors");
+const app = express();
 
-require("dotenv").config();
-require("./Connection/Connection");
-const router = require("./Routes/user");
-const books = require('./Routes/book')
-const favourites = require('./Routes/favourites');
-const cart = require('./Routes/cart')
-const order = require('./Routes/order')
-
+// Use CORS Middleware
 app.use(
   cors({
-    origin: "*", 
+    origin: "http://localhost:3000", // Replace with your actual frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true // Allow credentials
   })
 );
 
-
+// OR Allow All Origins (Temporary Fix)
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
-app.get("/", (req, res) => {
-  res.send("Hello world");
-});
-
-app.use("/", router);
-app.use("/",books);
-app.use("/",favourites);
-app.use("/",cart);
-app.use("/",order);
-
-
-
-app.listen(process.env.PORT, () => {
-  console.log(`Server is Connected PORT : ${process.env.PORT}`);
+app.listen(process.env.PORT || 5000, () => {
+  console.log(`Server running on port ${process.env.PORT || 5000}`);
 });
