@@ -2,16 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
-// Use CORS Middleware
-app.use(
-  cors({
-    origin: "http://localhost:3000", // Replace with your actual frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
 
-// OR Allow All Origins (Temporary Fix)
+
 app.use(cors());
 
 app.use(express.json());
