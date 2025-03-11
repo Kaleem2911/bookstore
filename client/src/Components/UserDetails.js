@@ -25,7 +25,7 @@ console.log(avatar);
       };
 
       const response = await axios.put(
-        "https://localhost:5000/update-avatar",
+        "http://localhost:5000/update-avatar",
         formData,
         { headers }
       );
@@ -50,7 +50,7 @@ console.log(avatar);
       };
 
       await axios.put(
-        "https://localhost:5000/update-address",
+        "http://localhost:5000/update-address",
         { address },
         { headers }
       );

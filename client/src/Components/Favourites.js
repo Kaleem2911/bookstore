@@ -22,7 +22,7 @@ const Favourites = () => {
   };
 
   useEffect(() => {
-    axios.get('https://localhost:5000/get-favourite-books', { headers })
+    axios.get('http://localhost:5000/get-favourite-books', { headers })
       .then((res) => {
         setFavouriteBook(res.data.data);
         console.log(res.data.data);
@@ -36,7 +36,7 @@ const Favourites = () => {
     event.stopPropagation();
     try {
       const response = await axios.delete(
-        'https://localhost:5000/remove-book-from-favourites',
+        'http://localhost:5000/remove-book-from-favourites',
         {
           headers: {
             ...headers,

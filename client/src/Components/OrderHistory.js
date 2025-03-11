@@ -21,7 +21,7 @@ const OrderHistory = () => {
   useEffect(() => {
     const fetchOrderHistory = async () => {
       try {
-        const response = await axios.get('https://localhost:5000/get-order-history', { headers });
+        const response = await axios.get('http://localhost:5000/get-order-history', { headers });
         if (response.status === 200) {
           const groupedOrders = response.data.data.reduce((acc, order) => {
             const bookId = order.book._id;

@@ -10,7 +10,7 @@ const AllBooks = () => {
   const [booksPerPage] = useState(10);
 
   useEffect(() => {
-    axios.get("https://localhost:5000/get-books").then((res) => {
+    axios.get("http://localhost:5000/get-books").then((res) => {
       setBooks(res.data.book);
       setFilteredBooks(res.data.book);
     });

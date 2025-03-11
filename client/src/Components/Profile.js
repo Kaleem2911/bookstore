@@ -25,7 +25,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     axios
-      .get("https://localhost:5000/get-user-info", { headers })
+      .get("http://localhost:5000/get-user-info", { headers })
       .then((res) => {
         setProfileDetails(res.data.data);
       })
