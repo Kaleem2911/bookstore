@@ -11,7 +11,7 @@ const cart = require('./Routes/cart')
 const order = require('./Routes/order')
 
 app.use(cors({
-  origin: "*",
+  origin: "https://bookstore-rho-umber.vercel.app/",
   methods: "GET,POST,PUT,DELETE",
   credentials: true, 
 }));
