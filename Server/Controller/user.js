@@ -7,7 +7,7 @@ require('dotenv').config();
 
 
 
-const Singup = async (req, res) => {
+const Signup = async (req, res) => {
   try {
     const { username, password, email, address } = req.body;
     if (username.length < 4) {
@@ -214,6 +214,6 @@ const deleteUser = async (req, res) => {
   }
 };
 
-module.exports = { Singup, Login, Auth, UpdateAddress, updateAvatar, forgotPassword, resetPassword , getAllUsers,deleteUser };
+module.exports = { Signup, Login, Auth, UpdateAddress, updateAvatar, forgotPassword, resetPassword , getAllUsers,deleteUser };
 
 
