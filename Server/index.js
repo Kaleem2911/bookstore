@@ -10,7 +10,11 @@ const favourites = require('./Routes/favourites');
 const cart = require('./Routes/cart')
 const order = require('./Routes/order')
 
-app.use(cors());
+app.use(cors({
+  origin: "https://bookstore-rho-umber.vercel.app/", // Replace with your frontend URL
+  methods: "GET,POST,PUT,DELETE",
+  credentials: true, // If using cookies or authentication
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
